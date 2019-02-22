@@ -73,7 +73,9 @@ export class PlanProductDetailsComponent implements OnInit {
             err => {
               console.log(err)
             }, () => {
-              window.location.href = 'https://zoftsolutions3.mybillsystem.com/ManagedPortal/PaymentMethod?token=' + this.key$;
+              sessionStorage.setItem("redirectPage", window.location.href);
+
+              window.location.href = 'https://zoftsolutions.mybillsystem.com/ManagedPortal/PaymentMethod?token=' + this.key$;
             }
 
           );
@@ -109,7 +111,7 @@ export class PlanProductDetailsComponent implements OnInit {
           this.getTotalAmount(this.planProducts$[0].orderToCashCycles[1].planFrequencyId, "init")
         }
 
-
+        sessionStorage.setItem("redirectPage", window.location.href);
 
       }
 
@@ -228,7 +230,7 @@ export class PlanProductDetailsComponent implements OnInit {
           err => {
             console.log(err)
           }, () => {
-            window.location.href = 'https://zoftsolutions3.mybillsystem.com/ManagedPortal/PaymentMethod?token=' + this.key$;
+            window.location.href = 'https://zoftsolutions.mybillsystem.com/ManagedPortal/PaymentMethod?token=' + this.key$;
           }
 
         );

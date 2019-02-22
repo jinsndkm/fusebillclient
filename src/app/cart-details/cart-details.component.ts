@@ -78,7 +78,7 @@ private custId:String;
           err => {
             console.log(err)
           }, () => {
-            window.location.href = 'https://zoftsolutions3.mybillsystem.com/ManagedPortal/PaymentMethod?token=' + this.key$;
+            window.location.href = 'https://zoftsolutions.mybillsystem.com/ManagedPortal/PaymentMethod?token=' + this.key$;
           }
     
         );

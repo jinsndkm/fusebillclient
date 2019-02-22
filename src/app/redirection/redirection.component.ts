@@ -26,6 +26,9 @@ export class RedirectionComponent implements OnInit {
         console.log(err)
       }, () => {
         var json = JSON.parse(JSON.stringify(this.cardDetails$));
+
+        //alert("json length ::>> "+json.length)
+
         if (json.length > 0) {
           for (let i = 0; i < json.length; i++) {
             if (json[i].isDefault == true) {
@@ -34,15 +37,19 @@ export class RedirectionComponent implements OnInit {
           }
 
           sessionStorage.setItem("isCardAdded", "true");
+          
+          window.location.href =sessionStorage.getItem("redirectPage");
         } else {
           sessionStorage.setItem("isCardAdded", "false");
         }
       }
     );
 
+   
+
     //Card Details getting /////////////////////////////////
     
-    window.location.href =sessionStorage.getItem("redirectPage");
+   
 
     
 

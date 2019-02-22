@@ -26,7 +26,7 @@ export class FusebillAddCardDetailsComponent implements OnInit {
       err => {
         console.log(err)
       }, () => {
-        window.location.href = 'https://zoftsolutions3.mybillsystem.com/ManagedPortal/PaymentMethod?token=' + this.key$;
+        window.location.href = 'https://zoftsolutions.mybillsystem.com/ManagedPortal/PaymentMethod?token=' + this.key$;
       }
 
     );
