@@ -84,7 +84,7 @@ private custId:String;
             console.log(err)
           }, () => {
             sessionStorage.setItem("redirectPage",window.location.href);
-            window.location.href = 'https://zoftsolutions.mybillsystem.com/ManagedPortal/PaymentMethod?token=' + this.key$;
+            window.location.href = 'https://zoftsolutions3.mybillsystem.com/ManagedPortal/PaymentMethod?token=' + this.key$;
           }
     
         );
