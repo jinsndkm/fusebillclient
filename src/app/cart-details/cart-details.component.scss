@@ -1,0 +1,65 @@
+
+.section
+{
+    .greetings
+
+    {
+        margin-top: 40px;
+    }
+    .panel-section
+    {
+    .panel-features
+    {
+        table
+        {
+            thead
+            {
+                tr
+                {
+                    th
+                    {
+                        font-weight: 600 !important;
+                        color: #596B81;
+                        border: transparent;
+                    }
+                    th.one
+                    {
+                        width:67%;
+                    }
+                }
+            }
+            tbody
+            {
+                tr
+                {
+                    background: #e9eff3;
+                    border-bottom: 4px solid #fff;
+                    td
+                    {
+                        border: none;
+                    }
+                }
+                tr.total
+                {
+
+                    background: #83949e !important;
+                    td
+                    {
+                        color:#fff !important;
+                        font-weight: bold;
+                    } 
+                }
+                
+            }
+        }
+
+        .t-amount
+        {
+            font-weight: 600 !important;
+            color: #596B81;
+        }
+    }
+
+    }
+
+}

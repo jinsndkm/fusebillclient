@@ -1,0 +1,143 @@
+
+.section
+{
+    .greetings
+
+    {
+        margin-top: 40px;
+    }
+    .dash-contain-profile
+    {
+        border-radius: 10px;
+        padding: 40px 30px;
+        background-image: linear-gradient(to right, #336699, #005B82);
+        margin-top: 40px;
+        color: #fff;
+        .client-photo
+        {
+
+            margin: auto;
+            display: block;
+            text-align: center;
+            img
+            {
+                width: 105px;
+                height: 105px;
+                margin-right: 40px;
+            
+                -webkit-box-shadow: 0 6px 15px 0 rgba(75, 202, 255, 0.42);
+                box-shadow: 0 6px 15px 0 rgba(75, 202, 255, 0.42);
+                border: solid 5px #FFFFFF;
+                border-radius: 50%;
+                margin-right: 20px;
+            }
+        }
+        .client-name
+        {
+           
+            font-size: 1.75em;
+            font-weight: 100;
+            color: #FFFFFF;
+            line-height: 1;
+        }
+        .client-diagnosis
+        {
+           
+            font-size: 0.813em;
+            font-weight: 100;
+            color: #FFFFFF;
+            line-height: 1;
+            margin-top: 4px;
+        }
+        .clint-bio
+        {
+            
+            font-size: 0.813em;
+            font-weight: 100;
+            color: #FFFFFF;
+            line-height: 18.2px;
+            margin-top: 4px;
+        }
+        .services-container
+        {
+            &:before
+            {
+              
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    content: '';
+                    height: 100%;
+                    width: 2px;
+                    background-color: #1b99e9;
+           
+            }
+            .p-r-18
+            {
+                padding-right: 15px;
+            }
+            .service-title
+            {
+                text-transform: uppercase;
+                display: inline-block;
+                font-family: "OpenSans", sans-serif;
+                font-size: 0.813em;
+                font-weight: 600;
+                color: #FFFFFF;
+                line-height: 1;
+                display:block;
+               
+            }
+            ul
+            {
+                li
+                {
+                    position: relative;
+                    
+                    font-size: 0.813em;
+                    font-weight: 100;
+                    color: #FFFFFF;
+                    line-height: 1;
+                    background: none !important;
+                    margin-top: 10px;
+                    padding: 0px !important;
+                    display: inline-flex;
+                    min-width: 103px;
+
+                    img{
+                        width: 32x;
+                        padding-right: 10px;
+                        display: inline-flex;
+                    }
+
+                     .icon {
+                        background-image: url('data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%2…2 mask%3D%22url(%23d)%22%2F%3E %3C%2Fg%3E %3C%2Fg%3E%3C%2Fsvg%3E');
+                        display: inline-block;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        height: 24px;
+                        width: 24px;
+                    }
+                   
+                    
+                }
+                .list1
+                {
+                 margin-bottom: 17px !important;
+                }
+            }
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .section-block
+    {
+      margin-bottom: 30px !important;
+    }
+   
+  }
+

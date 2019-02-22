@@ -1,0 +1,142 @@
+<div class="section">
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <img src="../assets/logo.png" />
+
+    </div>
+
+    <div class="col-md-12">
+      <div class="greetings">
+
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <div class="row">
+
+    <div class="col-md-12">
+      <div class="panel-section">
+
+        <div class="card common-card">
+          <ul>
+            <li *ngFor="let mySubscrriptionDetails of mySubscrriptionDetails$">
+              <div class="card-header common-panel-head">
+                <!-- <div class="row">
+                         <div class="col-md-2">
+    
+    
+                         </div>
+                         <div class="col-md-10">
+                           <h4>SUBSCRIPTION </h4>
+    
+                           <h3>My Subscriptions</h3>
+    
+                          
+                         </div>
+    
+    
+                       </div> -->
+
+
+                <div class="head-score">
+
+                  <i class="fas fa-align-justify l-icon"></i>
+                </div>
+
+
+
+
+                <div class="head-overview">
+                  <p class="short-head">ADD MORE SERVICE</p>
+                  <p class="head"> {{mySubscrriptionDetails.planName}}</p>
+                </div>
+
+
+              </div>
+              <div class="card-body common-panel-body">
+                <div class="subscription-details">
+
+                  <form>
+
+                    <div class="row">
+                      <div class="col-md-3 col-sm-3 col-xs-12">
+                        <h4 class="fs-9"> Created</h4>
+                        <p class="fs-9">
+                          {{mySubscrriptionDetails.createdTimestamp | date:'dd/MM/yyyy'}}
+                        </p>
+
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-12">
+                        <h4 class="fs-9"> Activated</h4>
+                        <p class="fs-9">{{mySubscrriptionDetails.activatedTimestamp | date:'dd/MM/yyyy'}} </p>
+
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-12">
+                        <h4 class="fs-9"> Recharge</h4>
+                        <p class="fs-9"> {{mySubscrriptionDetails.planFrequency.interval}} </p>
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-12">
+                        <h4 class="fs-9"> Next Recharge</h4>
+                        <p class="fs-9"> {{mySubscrriptionDetails.nextPeriodStartDate | date:'dd/MM/yyyy'}} </p>
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3 col-sm-3 col-xs-12">
+                        <h4 class="fs-9"> Expires</h4>
+                        <p class="fs-9"> {{mySubscrriptionDetails.openSubscriptionPeriodEndDate | date:'dd/MM/yyyy'}}
+                        </p>
+
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-12">
+                        <h4 class="fs-9"> Auto Renewal</h4>
+                        <p class="fs-9" *ngIf="mySubscrriptionDetails.remainingInterval!=0"> Auto Renewal On  </p>
+                        <p class="fs-9" *ngIf="mySubscrriptionDetails.remainingInterval==0"> Auto Renewal Off  </p>
+
+                      </div>
+
+
+
+                    </div>
+
+                    <div class="row">
+
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="description">
+
+                          <h4 class="fs-9"> Description</h4>
+                          <p>{{mySubscrriptionDetails.planDescription}}</p>
+
+
+                        </div>
+                      </div>
+
+
+                    </div>
+
+                  </form>
+
+
+                </div>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+</div>
+<!--seection-->
