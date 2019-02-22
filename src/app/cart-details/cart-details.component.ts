@@ -22,16 +22,13 @@ private custId:String;
 
 
   ngOnInit() {
-    sessionStorage.setItem("redirectPage",window.location.href);
-    this.nav.show();
-    this.cartItems = JSON.parse(sessionStorage.getItem('cartList'));
-    this.cartItems.forEach(element => {
-      this.grandTotal += element.amount;
-    });
 
-    if(sessionStorage.getItem("fusebillRedirect")=="true" && this.cartItems.length>1){
+    sessionStorage.setItem("redirectPage",window.location.href);
+    this.cartItems = JSON.parse(sessionStorage.getItem('cartList'));
+    // FROM CARD ADDING PAGE
+    if(sessionStorage.getItem("fusebillRedirect")=='true' ){
       this.spinner.show();
-      setTimeout(() => {
+      setTimeout(() => { 
         /** spinner ends after 5 seconds */
         this.spinner.hide();
       }, 4000);
@@ -40,8 +37,16 @@ private custId:String;
       });
       sessionStorage.removeItem('cartList');
       var json = JSON.stringify(status);
+      sessionStorage.setItem("fusebillRedirect","false");
     }
-    sessionStorage.setItem("fusebillRedirect","false");
+  // FROM CARD ADDING PAGE
+    this.nav.show();
+
+    this.cartItems.forEach(element => {
+      this.grandTotal += element.amount;
+    });
+  
+    
     console.log(JSON.stringify(this.cartItems));
   } 
   remove(cartModel) {
@@ -56,7 +61,7 @@ private custId:String;
   }
   subscribe(checkOutItems) {
     if(sessionStorage.getItem("isCardAdded")=="true"){
-      if (confirm("We will use your default card "+sessionStorage.getItem("cardNumner") +" for completing the payment. To add a new card for the payment go to the dashboard, click on Manage Card Details and make the card as Default")) {
+      if (confirm("Click OK to continue payment using your saved card ending in " + sessionStorage.getItem("cardNumner") + ". To use different payment method, please select Manage Payment option in the Home page.")) {
       this.spinner.show();
       setTimeout(() => {
         /** spinner ends after 5 seconds */
@@ -69,7 +74,7 @@ private custId:String;
       var json = JSON.stringify(status);
     }
     }else{
-      if (confirm("No card is added yet. Please clik Ok for add a new card.")) {
+      if (confirm("You need to add a payment method to subscrribe a service. Click OK to proceed.")) {
         sessionStorage.setItem("fusebillRedirect","true");
         this.spinner.show();
         this.data.getSingleSignOnKey(this.custId).subscribe(
@@ -78,6 +83,7 @@ private custId:String;
           err => {
             console.log(err)
           }, () => {
+            sessionStorage.setItem("redirectPage",window.location.href);
             window.location.href = 'https://zoftsolutions.mybillsystem.com/ManagedPortal/PaymentMethod?token=' + this.key$;
           }
     

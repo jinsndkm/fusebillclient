@@ -15,7 +15,7 @@ export class RedirectionComponent implements OnInit {
     this.custId=global.CUSTOMER_ID;
    }
 
-  ngOnInit() {
+  ngOnInit() { 
     this.nav.show();
 //Card Details geting..///////////////////////////
     this.cardDetails$ = this.data.checkCardDetails(this.custId).subscribe(
@@ -40,7 +40,8 @@ export class RedirectionComponent implements OnInit {
           
           window.location.href =sessionStorage.getItem("redirectPage");
         } else {
-          sessionStorage.setItem("isCardAdded", "false");
+          sessionStorage.setItem("isCardAdded", "true");
+          window.location.href =sessionStorage.getItem("redirectPage");
         }
       }
     );

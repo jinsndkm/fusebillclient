@@ -46,7 +46,7 @@ export class PlanProductDetailsComponent implements OnInit {
       if (sessionStorage.getItem("isCardAdded") == "true") {
        
 
-        if (confirm("We will use your default card " + sessionStorage.getItem("cardNumner") + " for completing the payment. To add a new card for the payment go to the dashboard, click on Manage Card Details and make the card as Default")) {
+        if (confirm("Click OK to continue payment using your saved card ending in " + sessionStorage.getItem("cardNumner") + ". To use different payment method, please select Manage Payment option in the Home page.")) {
 
           this.spinner.show();
           var status = this.data.createSub(sessionStorage.getItem("subId"), this.custId);
@@ -65,7 +65,7 @@ export class PlanProductDetailsComponent implements OnInit {
         }
       } else {
         
-        if (confirm("You need at least one default payment method before subscribing a service. Please click ok to add a new payment method.")) {
+        if (confirm("You need to add a payment method to subscrribe a service. Click OK to proceed.")) {
           this.spinner.show();
           this.data.getSingleSignOnKey(this.custId).subscribe(
 
@@ -211,7 +211,7 @@ export class PlanProductDetailsComponent implements OnInit {
   subscribe(s) {
     sessionStorage.setItem("subId", s);
     if (sessionStorage.getItem("isCardAdded") == "true") {
-      if (confirm("We will use your default card " + sessionStorage.getItem("cardNumner") + " for completing the payment. To add a new card for the payment go to the dashboard, click on Manage Card Details and make the card as Default")) {
+      if (confirm("Click OK to continue payment using your saved card ending in " + sessionStorage.getItem("cardNumner") + ". To use different payment method, please select Manage Payment option in the Home page.")) {
 
         this.spinner.show();
 
@@ -222,7 +222,7 @@ export class PlanProductDetailsComponent implements OnInit {
         sessionStorage.setItem("subId", 'null');
       }
     } else {
-      if (confirm("You need at least one default payment method before subscribing a service. Please click ok to add a new payment method.")) {
+      if (confirm("You need to add a payment method to subscrribe a service. Click OK to proceed.")) {
         this.spinner.show();
         this.data.getSingleSignOnKey(this.custId).subscribe(
 
@@ -230,6 +230,7 @@ export class PlanProductDetailsComponent implements OnInit {
           err => {
             console.log(err)
           }, () => {
+            sessionStorage.setItem("redirectPage", window.location.href);
             window.location.href = 'https://zoftsolutions.mybillsystem.com/ManagedPortal/PaymentMethod?token=' + this.key$;
           }
 
@@ -295,6 +296,7 @@ export class PlanProductDetailsComponent implements OnInit {
     this.empList.push(planDetails);
     this.cartItems.push(planDetails);
     sessionStorage.setItem("cartList", JSON.stringify(this.empList));
+   ale
   }
 
   getAmount(plnID) {
